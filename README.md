@@ -10,3 +10,4 @@ Analyses were conducted in the following order:
 2. betancur\_reanalysis
 3. species\_tree\_estimation
 4. geography\_reconstruction
+5. winston\_reanalysis
