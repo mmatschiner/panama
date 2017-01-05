@@ -1,0 +1,20 @@
+# Secondary calibration based on Brady et al. (2014), as used in Winston et al. (2016).
+normal(0,37.23,4.6)	crown	Chemeg,Ecibur_N,Ecibur_S,Ecidre,Ecidul,Eciham,Eciluc_N,Eciluc_S,Ecimex_N,Ecimex_S,Eciqua,Ecirap,Ecivag_N,Ecivag_S,Labcoe,Labner,Labpra,Labspi,Neileg,Neimex,Nomese,Nomhar
+# Monophyly constraint for the ingroup.
+monophyletic	NA	Chemeg,Ecibur_N,Ecibur_S,Ecidre,Ecidul,Eciham,Eciluc_N,Eciluc_S,Ecimex_N,Ecimex_S,Eciqua,Ecirap,Ecivag_N,Ecivag_S,Labcoe,Labner,Labpra,Labspi,Nomese,Nomhar
+# Monophyly constraint for the genus Labidus.
+monophyletic	NA	Labcoe,Labner,Labpra,Labspi
+# Monophyly constraint for the genus Eciton.
+monophyletic	NA	Ecibur_N,Ecibur_S,Ecidre,Ecidul,Eciham,Eciluc_N,Eciluc_S,Ecimex_N,Ecimex_S,Eciqua,Ecirap,Ecivag_N,Ecivag_S
+# Monophyly constraint for the genus 􏰀􏰁􏰂􏰃􏰄􏰅􏰆􏰇􏰅􏰁􏰈􏰉􏰀􏰁􏰂􏰃􏰄􏰅􏰆􏰇􏰅􏰁􏰈Neivamyrmex.
+monophyletic	NA	Neileg,Neimex
+# Monophyly constraint for the genus Nomamyrmex.
+monophyletic	NA	Nomese,Nomhar
+# Monophyly constraint for the species Eciton vagans.
+monophyletic	NA	Ecivag_N,Ecivag_S
+# Monophyly constraint for the species Eciton mexicanum.
+monophyletic	NA	Ecimex_N,Ecimex_S
+# Monophyly constraint for the species Eciton lucanoides.
+monophyletic	NA	Eciluc_N,Eciluc_S
+# Monophyly constraint for the species Eciton burchellii.
+monophyletic	NA	Ecibur_N,Ecibur_S
