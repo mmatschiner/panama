@@ -25,4 +25,4 @@ The following software must be installed in order to run all scripts of director
 * `python3` (version 3.0 or later including the "dendropy" library; [https://www.python.org/downloads/](https://www.python.org/downloads/))
 * `ruby` (version 2.0 or later including the "fileutils" library; [https://www.ruby-lang.org/en/](https://www.ruby-lang.org/en/))
 * `java` (Java SE Development Kit 8 or later; [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
-* `rscript` (version 3.1 or later including the "coda" and "phytools" libraries)
+* `rscript` (R environment version 3.1 or later including the "coda" and "phytools" libraries; [https://www.r-project.org](https://www.r-project.org))
