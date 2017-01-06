@@ -1,0 +1,16 @@
+# Secondary calibration based on reanalysis of Betancur-R et al. 2012.
+normal(0,27.4182,1.7)	crown	Ans,Bba,Ase,Bma,Bpa,Bp1,Bp2,Cfu,Chy,Cnu,Ctu,Cwa,Nbi,Nco,Ngr,Nke,Npl,Nqu,Sdo,SheGOV,SheCLA,Spa,Spr
+# Minimum age provided by Cathorops sp. from the Pirabas Formation.
+uniform(20.4,100)	stem	Cfu,Chy,Cnu,Ctu,Cwa
+# Minimum age provided by otolith fossils of Bagre protocaribbeaneus from the Pirabas Formation.
+uniform(20.4,100)	stem	Bba,Bma,Bpa,Bp1,Bp2
+# Minimum age provided by Sciades dowii from the Urumaco Formation.
+uniform(5.3,100)	stem	Sdo
+# Minimum age provided by Sciades herzbergii from the Urumaco Formation
+uniform(5.3,100)	stem	SheGOV,SheCLA
+# Minimum age provided by Bagre marinus from the Urumaco Formation
+uniform(5.3,100)	stem	Bma
+# Minimum age provided by Notarius quadriscutis from the Urumaco Formation
+uniform(5.3,100)	stem	Nqu
+# Minimum age provided by otolith fossils of Notarius sp. and Aspistor sp. from the Pirabas Formation
+uniform(20.4,100)	stem	Nbi,Nco,Ngr,Nke,Npl,Nqu
