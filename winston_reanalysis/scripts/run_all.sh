@@ -13,7 +13,7 @@ bash prepare_snapp_input.sh
 bash prepare_snapp_analyses.sh
 
 # Run SNAPP analyses.
-echo "SNAPP analyses must be run outside of this script. Once they have finished, use the remaining commands in this script to complete the pipeline."
+echo "SNAPP analyses must be run outside of this script. Once they have finished, use the remaining commands in this script to complete the analysis."
 exit
 
 # Add the theta parameter from the .trees files to the .log files and calculate the population size.
