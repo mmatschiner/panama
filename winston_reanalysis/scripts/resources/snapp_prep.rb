@@ -181,13 +181,15 @@ else
 		uniq_bases_at_this_pos = bases_at_this_pos.uniq
 		# Issue a warning if non-biallelic sites are excluded.
 		if uniq_bases_at_this_pos.size == 2
-		# Randomly define what's "0" and "2".
-		uniq_bases_at_this_pos.shuffle!
+			# Randomly define what's "0" and "2".
+			uniq_bases_at_this_pos.shuffle!
 			seqs.size.times do |x|
 				if seqs[x][pos] == uniq_bases_at_this_pos[0]
 					binary_seqs[x] << "0"
 				elsif seqs[x][pos] == uniq_bases_at_this_pos[1]
 					binary_seqs[x] << "2"
+				elsif missing_chars.include?(seqs[x][pos])
+					binary_seqs[x] << "-"
 				else
 					binary_seqs[x] << "1"
 				end
@@ -607,7 +609,7 @@ snapp_string << "        <log idref=\"clockRate\"/>\n"
 snapp_string << "    </logger>\n"
 snapp_string << "    <logger fileName=\"#{snapp_trees_file_name}\" logEvery=\"#{store_frequency}\" mode=\"tree\">\n"
 snapp_string << "        <log spec=\"beast.evolution.tree.TreeWithMetaDataLogger\" tree=\"@tree\">\n"
-snapp_string << "            <metadata spec=\"snap.RateToTheta\" coalescenceRate=\"@coalescenceRate\"/>\n"
+snapp_string << "            <metadata id=\"theta\" spec=\"snap.RateToTheta\" coalescenceRate=\"@coalescenceRate\"/>\n"
 snapp_string << "        </log>\n"
 snapp_string << "    </logger>\n"
 snapp_string << "\n"
