@@ -1,0 +1,116 @@
+            <!-- Divergence age priors -->
+            <distribution id="Clade0001" spec="beast.math.distributions.MRCAPrior" useOriginate="false" monophyletic="true"  tree="@tree.t:Species">
+                <taxonset id="Constraint0001" spec="TaxonSet">
+                    <taxon idref="Chemeg"/>
+                    <taxon idref="Ecibur_N"/>
+                    <taxon idref="Ecibur_S"/>
+                    <taxon idref="Ecidre"/>
+                    <taxon idref="Ecidul"/>
+                    <taxon idref="Eciham"/>
+                    <taxon idref="Eciluc_N"/>
+                    <taxon idref="Eciluc_S"/>
+                    <taxon idref="Ecimex_N"/>
+                    <taxon idref="Ecimex_S"/>
+                    <taxon idref="Eciqua"/>
+                    <taxon idref="Ecirap"/>
+                    <taxon idref="Ecivag_N"/>
+                    <taxon idref="Ecivag_S"/>
+                    <taxon idref="Labcoe"/>
+                    <taxon idref="Labner"/>
+                    <taxon idref="Labpra"/>
+                    <taxon idref="Labspi"/>
+                    <taxon idref="Neileg"/>
+                    <taxon idref="Neimex"/>
+                    <taxon idref="Nomese"/>
+                    <taxon idref="Nomhar"/>
+                </taxonset>
+                <Normal name="distr" offset="0">
+                    <parameter estimate="false" lower="0.0" name="mean">37.23</parameter>
+                    <parameter estimate="false" lower="0.0" name="sigma">4.6</parameter>
+                </Normal>
+            </distribution>
+            <distribution id="Clade0002" spec="beast.math.distributions.MRCAPrior" useOriginate="false" monophyletic="true"  tree="@tree.t:Species">
+                <taxonset id="Constraint0002" spec="TaxonSet">
+                    <taxon idref="Chemeg"/>
+                    <taxon idref="Ecibur_N"/>
+                    <taxon idref="Ecibur_S"/>
+                    <taxon idref="Ecidre"/>
+                    <taxon idref="Ecidul"/>
+                    <taxon idref="Eciham"/>
+                    <taxon idref="Eciluc_N"/>
+                    <taxon idref="Eciluc_S"/>
+                    <taxon idref="Ecimex_N"/>
+                    <taxon idref="Ecimex_S"/>
+                    <taxon idref="Eciqua"/>
+                    <taxon idref="Ecirap"/>
+                    <taxon idref="Ecivag_N"/>
+                    <taxon idref="Ecivag_S"/>
+                    <taxon idref="Labcoe"/>
+                    <taxon idref="Labner"/>
+                    <taxon idref="Labpra"/>
+                    <taxon idref="Labspi"/>
+                    <taxon idref="Nomese"/>
+                    <taxon idref="Nomhar"/>
+                </taxonset>
+            </distribution>
+            <distribution id="Clade0003" spec="beast.math.distributions.MRCAPrior" useOriginate="false" monophyletic="true"  tree="@tree.t:Species">
+                <taxonset id="Constraint0003" spec="TaxonSet">
+                    <taxon idref="Labcoe"/>
+                    <taxon idref="Labner"/>
+                    <taxon idref="Labpra"/>
+                    <taxon idref="Labspi"/>
+                </taxonset>
+            </distribution>
+            <distribution id="Clade0004" spec="beast.math.distributions.MRCAPrior" useOriginate="false" monophyletic="true"  tree="@tree.t:Species">
+                <taxonset id="Constraint0004" spec="TaxonSet">
+                    <taxon idref="Ecibur_N"/>
+                    <taxon idref="Ecibur_S"/>
+                    <taxon idref="Ecidre"/>
+                    <taxon idref="Ecidul"/>
+                    <taxon idref="Eciham"/>
+                    <taxon idref="Eciluc_N"/>
+                    <taxon idref="Eciluc_S"/>
+                    <taxon idref="Ecimex_N"/>
+                    <taxon idref="Ecimex_S"/>
+                    <taxon idref="Eciqua"/>
+                    <taxon idref="Ecirap"/>
+                    <taxon idref="Ecivag_N"/>
+                    <taxon idref="Ecivag_S"/>
+                </taxonset>
+            </distribution>
+            <distribution id="Clade0005" spec="beast.math.distributions.MRCAPrior" useOriginate="false" monophyletic="true"  tree="@tree.t:Species">
+                <taxonset id="Constraint0005" spec="TaxonSet">
+                    <taxon idref="Neileg"/>
+                    <taxon idref="Neimex"/>
+                </taxonset>
+            </distribution>
+            <distribution id="Clade0006" spec="beast.math.distributions.MRCAPrior" useOriginate="false" monophyletic="true"  tree="@tree.t:Species">
+                <taxonset id="Constraint0006" spec="TaxonSet">
+                    <taxon idref="Nomese"/>
+                    <taxon idref="Nomhar"/>
+                </taxonset>
+            </distribution>
+            <distribution id="Clade0007" spec="beast.math.distributions.MRCAPrior" useOriginate="false" monophyletic="true"  tree="@tree.t:Species">
+                <taxonset id="Constraint0007" spec="TaxonSet">
+                    <taxon idref="Ecivag_N"/>
+                    <taxon idref="Ecivag_S"/>
+                </taxonset>
+            </distribution>
+            <distribution id="Clade0008" spec="beast.math.distributions.MRCAPrior" useOriginate="false" monophyletic="true"  tree="@tree.t:Species">
+                <taxonset id="Constraint0008" spec="TaxonSet">
+                    <taxon idref="Ecimex_N"/>
+                    <taxon idref="Ecimex_S"/>
+                </taxonset>
+            </distribution>
+            <distribution id="Clade0009" spec="beast.math.distributions.MRCAPrior" useOriginate="false" monophyletic="true"  tree="@tree.t:Species">
+                <taxonset id="Constraint0009" spec="TaxonSet">
+                    <taxon idref="Eciluc_N"/>
+                    <taxon idref="Eciluc_S"/>
+                </taxonset>
+            </distribution>
+            <distribution id="Clade0010" spec="beast.math.distributions.MRCAPrior" useOriginate="false" monophyletic="true"  tree="@tree.t:Species">
+                <taxonset id="Constraint0010" spec="TaxonSet">
+                    <taxon idref="Ecibur_N"/>
+                    <taxon idref="Ecibur_S"/>
+                </taxonset>
+            </distribution>

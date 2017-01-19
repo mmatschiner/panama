@@ -20,7 +20,26 @@ exit
 bash add_theta_to_log.sh
 
 # Combine the log and trees files of the five run replicates.
-bash combine_results.sh
+bash combine_snapp_results.sh
 
 # Produce a maximum-clade-credibility summary tree.
-bash produce_mcc_tree.sh
+bash produce_snapp_mcc_tree.sh
+
+# Reduce the original alignment to a single individual per species.
+bash reduce_alignment.sh
+
+# Prepare the XML input file for concatenated BEAST analyses.
+bash prepare_beast_input.sh
+
+# Prepare directories for BEAST analyses.
+bash prepare_beast_analyses.sh
+
+# Run BEAST analyses.
+echo "BEAST analyses must be run outside of this script. Once they have finished, use the remaining commands in this script to complete the analysis."
+exit
+
+# Combine the log and trees files of the five run replicates.
+bash combine_beast_results.sh
+
+# Produce a maximum-clade-credibility summary tree for all BEAST analyses.
+bash produce_beast_mcc_tree.sh

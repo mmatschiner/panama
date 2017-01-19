@@ -2,7 +2,7 @@
 
 # Generate input directories.
 mkdir -p ../analysis/snapp/replicates
-n_replicates=3
+n_replicates=5
 for ((i=1;i<=${n_replicates};i++));
 do
 	mkdir -p ../analysis/snapp/replicates/r0${i}

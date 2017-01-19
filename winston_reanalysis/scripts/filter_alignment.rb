@@ -51,7 +51,7 @@ reduced_alignment_seqs[0].size.times do |pos|
 	end
 	number_of_missing_bases_at_this_site = bases_at_this_site.count("N") + bases_at_this_site.count("-") + bases_at_this_site.count("?")
 	number_of_missing_bases_in_full_alignment += number_of_missing_bases_at_this_site
-	unless number_of_missing_bases_at_this_site > 5
+	unless number_of_missing_bases_at_this_site > 20
 		uniq_bases_at_this_site = bases_at_this_site.uniq
 		if uniq_bases_at_this_site.count("A") + uniq_bases_at_this_site.count("C") + uniq_bases_at_this_site.count("G") + uniq_bases_at_this_site.count("T") > 1
 			if pos > snp_positions.last + 100
