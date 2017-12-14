@@ -1,0 +1,18 @@
+# Fdb version 3
+["pdflatex"] 1513021478 "BASTA_xml_file_guide.tex" "BASTA_xml_file_guide.pdf" "BASTA_xml_file_guide" 1513021478
+  "/usr/local/texlive/2017basic/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1480098815 1458 43ab4710dc82f3edeabecd0d099626b2 ""
+  "/usr/local/texlive/2017basic/texmf-dist/tex/generic/oberdiek/ifpdf.sty" 1490564930 1251 d170e11a3246c3392bc7f59595af42cb ""
+  "/usr/local/texlive/2017basic/texmf-dist/tex/generic/oberdiek/ifvtex.sty" 1480098815 6797 90b7f83b0ad46826bc16058b1e3d48df ""
+  "/usr/local/texlive/2017basic/texmf-dist/tex/latex/base/article.cls" 1480098821 19821 310da678527a7dfe2a02c88af38079b7 ""
+  "/usr/local/texlive/2017basic/texmf-dist/tex/latex/base/size10.clo" 1480098821 8292 e897c12e1e886ce77fe26afc5d470886 ""
+  "/usr/local/texlive/2017basic/texmf-dist/tex/latex/geometry/geometry.sty" 1480098829 40502 e003406220954b0716679d7928aedd8a ""
+  "/usr/local/texlive/2017basic/texmf-dist/tex/latex/graphics/keyval.sty" 1480098830 2594 d18d5e19aa8239cf867fa670c556d2e9 ""
+  "/usr/local/texlive/2017basic/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
+  "/usr/local/texlive/2017basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1504436166 2588967 c700306eea321d147a4b6c261ecd3c5f ""
+  "/usr/local/texlive/2017basic/texmf.cnf" 1496851631 628 b344fac068e513a3e5fe2214c3a47398 ""
+  "BASTA_xml_file_guide.aux" 1513021478 8 a94a2480d3289e625eea47cd1b285758 ""
+  "BASTA_xml_file_guide.tex" 1513014227 12728 892a3ec47c1fffd618266f4e74c6e02a ""
+  "changepage.sty" 0 -1 0 ""
+  (generated)
+  "BASTA_xml_file_guide.log"
+  "BASTA_xml_file_guide.pdf"

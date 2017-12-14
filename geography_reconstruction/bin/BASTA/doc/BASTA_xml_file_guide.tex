@@ -1,0 +1,295 @@
+
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% Use Unicode characters when possible
+\usepackage[utf8]{inputenc}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+% fixltx2e package for \textsubscript
+\usepackage{fixltx2e}
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref,hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+\usepackage{listings}
+
+
+% ligatures disabled
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = * }
+
+% rotating package for sideways tables
+\usepackage{rotating}
+
+%bold math font
+\usepackage{bm}
+
+\usepackage{color}
+
+% Remove comment for double spacing
+%\usepackage{setspace} 
+%\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in 
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+
+% Use the PLoS provided BiBTeX style
+%\bibliographystyle{plos2009}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+% Leave date blank
+\date{}
+
+%% END MACROS SECTION
+
+
+\begin{document}
+\vspace*{0.35in}
+
+% Title must be 150 characters or less
+
+{\Huge
+\textbf\newline{How to write/edit an xml file for BASTA}
+}
+\newline
+
+{\Large
+\textbf\newline{Nicola De Maio}
+}
+\newline
+{
+\textbf\newline{\today}
+}
+\newline
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+%{\huge
+%\textcolor{green}{Green: things still to do/modify}
+%}
+%\newline
+
+\section{Installing BASTA}
+
+BASTA is a BEAST2 package. 
+To install it, first download and install BEAST2 if you have not already done so (\emph{http://beast2.org/}). earliest versions compatible are BEAST 2.2 and 2.3.
+Then, from the BEAST2 distribution, run BEAUti (double-click on the BEAUti icon contained in the BEAST2 folder).
+In BEAUti, click on "File" from the top menu, select "Manage packages" from the scroll-down menu, then select BASTA from the table of packages, and click on "Install/Upgrade".
+Now BEAST2 will be able or running BASTA xml files.
+
+The source code of BASTA, examples, and this documentation, can be also found in  \emph{https://bitbucket.org/nicofmay/basta-bayesian-structured-coalescent-approximation/src/d313cbe3dddc?at=master} which also includes an alternative installation procedure.
+
+\section{Creating a working xml file}
+
+BASTA does not yet provide a way of generating a working xml file via BEAUti. Yet, by using one of the example BASTA xml files provided in \emph{https://bitbucket.org/nicofmay/basta-bayesian-structured-coalescent-approximation/src/d313cbe3dddc8d223e989ed1b10199475d06159c/examples/?at=master} as template, and manually adding/modifying parts as explained below, it is possible to create one with customised features. 
+In the following, I will assume that the "TYLCV\_BASTA.xml" example file has been chosen as a template.
+
+\subsection{Including the genetic alignment}
+
+A genetic alignment section will look like this:
+
+\begin{lstlisting}
+<alignment spec="beast.evolution.alignment.Alignment" id="alignment1" dataType="nucleotide">
+<sequence taxon='Taxon1' value="atgtgggatccacttctaaataa"/>
+<sequence taxon='Taxon2' value="atgtgggatccacttctaaattaa"/>
+</alignment>
+\end{lstlisting}
+
+Here "alignment1" is the name of the alignment (important to distinguish eventual different alignments), and "Taxon1" is the name of the first taxon, ecc.
+You can manually edit this part to enter your own alignment, and you can even enter multiple alignments, for example if you have different loci for which you want to estimate different phylogenetic trees, but which share the mutation or migration rates. For a large alignment, the simplest way to create this section is to use BEAUti: open the program, click on the "+" button on the bottom, and choose your alignment. Then save the xml file ("File"$\rightarrow$"Save as") and from the saved file select the alignment section (and only that) and past it in your BASTA xml file.
+
+\subsection{Including geographic data}
+
+BASTA only allows discrete locations. An example of the section describing geographic locations of the samples is the following:
+
+\begin{lstlisting}
+<typeTraitSet id="typeTraitSet" spec="TraitSet" traitname="type" value="Taxon1=Asia,Taxon2=America">
+     <taxa spec='TaxonSet' alignment='@alignment1'/>
+   </typeTraitSet>
+\end{lstlisting}
+
+Here "Asia" and "America" are the names of the geographic locations, and taxon names (here "Taxon1" and "Taxon2") must be the same as in the alignment (specified here by "alignment1").
+
+You must edit this part by entering the sampling location for {\bf{ALL}} your taxa, or you can again use BEAUti to derive locations from sample names or a file. To do this, again start BEAUti, then select the MultiTypeTree template (from "File"$\rightarrow$ "Template", which requires prior installation of MultiTypeTree from the "File"$\rightarrow$"Manage Packages" menu), load your alignment (with the "+" button again) and then add the sampling locations in the "Tip Locations" tab. Save the xml file again, and copy-past the geographic data section to your BASTA xml file.
+
+\subsection{Including sampling times}
+
+Similarly, time data section looks like this:
+
+\begin{lstlisting}
+      <timeTraitSet spec='TraitSet' id='timeTraitSet' traitname="date-forward" value="Taxon1=2004.0,Taxon1=2004.2,">   
+ <taxa spec='TaxonSet' alignment='@alignment1'/>
+   </timeTraitSet>
+\end{lstlisting}
+   
+Which is similar to before, except that now "2004.0" and "2004.2" are the sampling dates of the two considered taxa. Again, this section can be manually edited or can be generated with BEAUti using the "Tip Dates" tab, and then copy-pasted to your BASTA xml file from the BEAUti-generated xml file.
+
+\subsection{Defining the migration model}
+
+the migration model is defined with:
+
+\begin{lstlisting}
+   <migrationModelVolz spec='MigrationModelVolz' nTypes='8' id='migModel'>
+     <rateMatrix spec='RealParameter' value="1.0" dimension="28" id="rateMatrix"/>
+     <popSizes spec='RealParameter' value="1.0" dimension="8" id="popSizes"/>
+   </migrationModelVolz>
+\end{lstlisting}
+
+Here the most important part are the two number, "28" and "8". nTypes specifies the how many demes (or equivalently populations, or locations) are defined in the model.
+The dimension of rateMatrix (28) tells BASTA how many rates are there in the migration matrix. With 8 demes there are only 3 options: 56 (asymmetric rate matrix), 28 (symmetric), and 1 (uniform rate matrix).
+More generally, if you have $n$ locations, and you want an asymmetric migration matrix, then enter the value corresponding to $n(n-1)$. Otherwise, if you want a symmetric matrix, enter the value of $n(n-1)/2$.
+Lastly, the dimension of popSizes can only have two values: the number of demes (in this case 8, which means every deme has a separate size parameter) or 1 (in which case all demes have the same population size).\\
+
+You will have to modify the migration model initialisation as well accordingly:
+
+\begin{lstlisting}
+     <init spec='StructuredCoalescentMultiTypeTreeVolz' id='tree'>
+         <migrationModelVolz spec='MigrationModelVolz' nTypes='8'>
+             <rateMatrix spec='RealParameter' value="1.0" dimension="28"/>
+             <popSizes spec='RealParameter' value="1.0" dimension="8"/>
+         </migrationModelVolz>
+         <trait idref='typeTraitSet'/>
+         <trait idref='timeTraitSet'/>
+     </init>
+\end{lstlisting}
+
+Here the dimension parameters do not matter, as long as they are consistent with the number of demes.
+
+
+%\subsection{Setting the population sizes to the same value}
+%
+%Sometimes it is important not to estimate different effective population sizes for different locations. This is important if the sampling strategy is far from ideal (it is assumed that samples are taken at random from each location) .
+%In the TYLCV example, this is already done:
+%
+%\begin{lstlisting}
+%     <operator spec="ScaleOperator" id="PopSizeScaler"
+% 	      parameter="@popSizes" scaleAll="True"
+%	      scaleFactor="0.8" weight="3"/>
+%\end{lstlisting}
+%
+%If you want to have different population sizes, just remove "scaleAll="True"" from this section.
+
+\subsection{Loggers}
+
+Loggers specify what output will be given both on screen and on file.
+One of the possible outputs is the number of migration events in each direction, specified by 
+
+\begin{lstlisting}
+       <log spec='MigrationCountsLoggerVolz' density='@treePrior'/>
+\end{lstlisting}
+
+This might not work with an asymmetric migration model, so you might want to remove this line in such a case, although this issue seems to be solved in the recent releases of BEAST2.
+
+Also, the tree can be given in output with either inferred locations identifying numbers or names.
+Names are usually nicer, and can be obtained with the line
+
+\begin{lstlisting}
+       <log idref="treePrior"/>
+\end{lstlisting}
+
+Although this requires that at least a sample from each location is provided. If this is not the case, then you have to use the version with location numbers:
+
+\begin{lstlisting}
+       <log idref="tree"/>
+\end{lstlisting}
+
+
+\subsection{BSSVS}
+
+In order to perform Bayesian Stochastic Search Variable Selection you will need a few further modifications, which are also shown in the example xml file ``AIV\_BASTA\_BSSVS.xml''.
+Specifically, you will need to add
+\begin{lstlisting}
+     <rateMatrixFlags spec='BooleanParameter' value="true" dimension="10" id="rateMatrixFlags"/>
+\end{lstlisting}
+in the migration model specification section (substituting ``10'' with the actual number of rate parameters), plus
+\begin{lstlisting}
+     <distribution spec='beast.math.distributions.Prior'>
+         <x spec='Sum' arg="@rateMatrixFlags"/>
+         <distr spec='Poisson' lambda="5"/>
+     </distribution>
+\end{lstlisting}
+in the parameters priors section,  plus
+\begin{lstlisting}
+       <stateNode idref="rateMatrixFlags"/>
+\end{lstlisting}
+in the states section, and 
+\begin{lstlisting}
+     <operator spec='BitFlipOperator' id='bitFlipOperator'
+               parameter='@rateMatrixFlags' weight="1"/>
+\end{lstlisting}
+in the operator section.
+Finally, to print the binary variable values to screen and/or to file, remember to add
+\begin{lstlisting}
+       <log idref="rateMatrixFlags"/>
+\end{lstlisting}
+to the logger sections.
+
+
+Running a BSSVS analysis in BASTA seems to require the use of the command line interface rather than the graphical interface of BEAST (see "Running BASTA").
+
+
+\section{Running BASTA}
+
+Just select the BASTA xml file you created, after you double-clicked on the BEAST2 icon in the BEAST2 folder.
+
+Alternatively, you can get a copy of the BASTA package from \emph{ https://bitbucket.org/nicofmay/basta-bayesian-structured-coalescent-approximation/raw/master/dist/BASTA.v2.0.3.zip}
+after unzipping it, and locating the jar file in the lib folder, you can run the following command from terminal:
+
+\emph{java -cp /path\_to\_BASTA/BASTA.v2.0.3.jar:/path\_to\_BASTA/lib/jblas-1.2.3.jar:/path\_to\_BASTA/lib/guava-15.0.jar:/path\_to\_BEAST/BEAST\\ 2.3.0/lib/beast.jar beast.app.beastapp.BeastMain -seed 1 -overwrite /path\_to\_xml\_file/file.xml}
+
+
+\section{Interpreting results}
+
+Migration rates in the output files will be ordered according to the following criterion:
+For a symmetric model:  \hspace{0.3cm} $0\rightarrow 1$ \hspace{0.3cm}  $0\rightarrow 2$  \hspace{0.3cm}  $1\rightarrow 2$ \hspace{0.3cm}   $0\rightarrow 3$  \hspace{0.3cm}  $1\rightarrow 3$ \hspace{0.3cm}   $2\rightarrow 3$ ...  etc.
+
+For an asymmetric model:  \hspace{0.3cm} $0\rightarrow 1$  \hspace{0.3cm}  $0\rightarrow 2$ \hspace{0.3cm}   $0\rightarrow 3$  ..... \hspace{0.3cm}  $1\rightarrow 0$  \hspace{0.3cm}  $1\rightarrow 2$ \hspace{0.3cm}  $1\rightarrow 3$   ....  etc.
+
+
+\end{document}
+

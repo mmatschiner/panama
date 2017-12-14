@@ -1,0 +1,177 @@
+<beast version='2.0' namespace='beast.evolution.alignment:beast.core:beast.core.parameter:beast.evolution.tree:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood:beast.evolution.tree:beast.math.distributions:multitypetreeVolz.distributions:multitypetreeVolz.operators:multitypetreeVolz.util'>
+
+	<alignment spec="beast.evolution.alignment.Alignment" id="alignment"  dataType="nucleotide">
+		<sequence id="seq_Ans" taxon="Ans" totalcount="4" value="???" />
+		<sequence id="seq_Ase" taxon="Ase" totalcount="4" value="???" />
+		<sequence id="seq_Bba" taxon="Bba" totalcount="4" value="???" />
+		<sequence id="seq_Bmaf" taxon="Bmaf" totalcount="4" value="???" />
+		<sequence id="seq_Bmar" taxon="Bmar" totalcount="4" value="???" />
+		<sequence id="seq_Bp1" taxon="Bp1" totalcount="4" value="???" />
+		<sequence id="seq_Bp2" taxon="Bp2" totalcount="4" value="???" />
+		<sequence id="seq_Bpa" taxon="Bpa" totalcount="4" value="???" />
+		<sequence id="seq_Bpr1" taxon="Bpr1" totalcount="4" value="???" />
+		<sequence id="seq_Bpr2" taxon="Bpr2" totalcount="4" value="???" />
+		<sequence id="seq_Cfu" taxon="Cfu" totalcount="4" value="???" />
+		<sequence id="seq_Cgo" taxon="Cgo" totalcount="4" value="???" />
+		<sequence id="seq_Chy" taxon="Chy" totalcount="4" value="???" />
+		<sequence id="seq_Cnu" taxon="Cnu" totalcount="4" value="???" />
+		<sequence id="seq_Ctu" taxon="Ctu" totalcount="4" value="???" />
+		<sequence id="seq_Cwa" taxon="Cwa" totalcount="4" value="???" />
+		<sequence id="seq_Nbi" taxon="Nbi" totalcount="4" value="???" />
+		<sequence id="seq_Nco" taxon="Nco" totalcount="4" value="???" />
+		<sequence id="seq_Ngr" taxon="Ngr" totalcount="4" value="???" />
+		<sequence id="seq_Nke" taxon="Nke" totalcount="4" value="???" />
+		<sequence id="seq_Npl" taxon="Npl" totalcount="4" value="???" />
+		<sequence id="seq_Nquf" taxon="Nquf" totalcount="4" value="???" />
+		<sequence id="seq_Nqur" taxon="Nqur" totalcount="4" value="???" />
+		<sequence id="seq_Nsp" taxon="Nsp" totalcount="4" value="???" />
+		<sequence id="seq_Sdof" taxon="Sdof" totalcount="4" value="???" />
+		<sequence id="seq_Sdor" taxon="Sdor" totalcount="4" value="???" />
+		<sequence id="seq_SheCLA" taxon="SheCLA" totalcount="4" value="???" />
+		<sequence id="seq_Shef" taxon="Shef" totalcount="4" value="???" />
+		<sequence id="seq_SheGOV" taxon="SheGOV" totalcount="4" value="???" />
+		<sequence id="seq_Spa" taxon="Spa" totalcount="4" value="???" />
+		<sequence id="seq_Spr" taxon="Spr" totalcount="4" value="???" />
+	</alignment>
+		
+	<typeTraitSet id="typeTraitSet" spec="TraitSet" traitname="type" value="
+		Ans=TEP,
+		Ase=TEP,
+		Bba=Caribbean,
+		Bmaf=Caribbean,
+		Bmar=Caribbean,
+		Bp1=TEP,
+		Bp2=TEP,
+		Bpa=TEP,
+		Bpr1=Caribbean,
+		Bpr2=Caribbean,
+		Cfu=TEP,
+		Cgo=Caribbean,
+		Chy=TEP,
+		Cnu=Caribbean,
+		Ctu=TEP,
+		Cwa=Caribbean,
+		Nbi=TEP,
+		Nco=TEP,
+		Ngr=Caribbean,
+		Nke=TEP,
+		Npl=TEP,
+		Nquf=Caribbean,
+		Nqur=Caribbean,
+		Nsp=Caribbean,
+		Sdof=Caribbean,
+		Sdor=TEP,
+		SheCLA=Caribbean,
+		Shef=Caribbean,
+		SheGOV=Caribbean,
+		Spa=Caribbean,
+		Spr=Caribbean">
+		<taxa spec='TaxonSet' alignment='@alignment' id='taxa'/>
+	</typeTraitSet>
+	   
+	<timeTraitSet spec='TraitSet' id='timeTraitSet' traitname="date-reverse" value="
+		Ans=0,
+		Ase=0,
+		Sdor=0,
+		Sdof=5.3,
+		Nsp=20.4,
+		Nqur=0,
+		Nquf=5.3,
+		Npl=0,
+		Nke=0,
+		Nco=0,
+		Ngr=0,
+		Nbi=0,
+		Bpr1=20.4,
+		Bpr2=16.0,
+		Bba=0,
+		Bmaf=5.3,
+		Bmar=0,
+		Bpa=0,
+		Bp1=0,
+		Bp2=0,
+		SheGOV=0,
+		SheCLA=0,
+		Shef=5.3,
+		Spr=0,
+		Spa=0,
+		Cgo=20.4,
+		Cfu=0,
+		Chy=0,
+		Cnu=0,
+		Cwa=0,
+		Ctu=0">
+		<taxa spec='TaxonSet' alignment='@alignment'/>
+	</timeTraitSet>
+   
+ 
+	<!-- Migration model -->
+	<migrationModelVolz spec='MigrationModelVolz' id='migModel' nTypes="2">
+		<rateMatrix spec='RealParameter' dimension="1" id="rateMatrix" value="1.0"/> 
+		<popSizes spec='RealParameter' dimension="1" id="popSizes" value="1.0"/>
+	</migrationModelVolz>
+ 
+	<!-- Parameter priors -->
+	<input spec='CompoundDistribution' id='parameterPriors'>
+		<distribution spec='beast.math.distributions.Prior' x="@rateMatrix">
+			<distr spec="LogNormalDistributionModel"  M="0.2" S="1.0" meanInRealSpace="true"/>
+		</distribution>		 
+		<distribution spec='beast.math.distributions.Prior' x="@popSizes">
+			<distr spec="LogNormalDistributionModel"  M="0.0" S="2.0"/>
+		</distribution>
+	</input>
+    
+	<!-- Probability of tree given migration rates and population sizes -->
+	<input spec='StructuredCoalescentTreeDensityVolz' id='treePrior'>
+		<multiTypeTreeVolz idref="tree"/>
+		<migrationModelVolz idref="migModel"/>
+	</input>
+
+	<run spec="MCMC" id="mcmc" chainLength="1000000" storeEvery="10000">
+           
+		<!-- Initialize tree from Newick string -->
+		<init spec='beast.evolution.tree.MultiTypeTreeFromNewickVolz' typeLabel="type" adjustTipHeights='false' id='tree' newick="(((Nsp:0.8829963287,(((Nqur:8.332072426,Nquf:3.032072308):2.955532974,((Nke:1.718648565,Nco:1.718648565):8.449004607,Npl:10.16765316):1.119952238):0.3249430422,(Ngr:9.627421212,Nbi:9.627421212):1.98512724):9.670448015):0.9596301295,(((Bpr1:0.2216425906,Bpr2:4.621642583):0.2387994109,(((Bba:8.886040146,(Bmaf:1.812804383,Bmar:7.112804518):1.773235648):0.8115243805,Bpa:9.697564524):1.232664209,(Bp1:1.657505784,Bp2:1.657505784):9.272722943):9.930213387):0.4697234571,(((((SheGOV:1.635806327,SheCLA:1.635806327):4.273468024,Shef:0.6092742272):0.5236270017,(Spr:6.061097494,Spa:6.061097492):0.3718038617):0.3035667211,(Sdor:5.98305802,Sdof:0.6830578965):0.7534100524):12.32610176,(Ans:5.438550144,Ase:5.438550144):13.62401968):2.267595754):0.912460994):6.79889937,(Cgo:4.246566811,((Cfu:5.677579594,Chy:5.677579594):1.225044384,((Cnu:0.4616332797,Cwa:0.4616332797):2.117779717,Ctu:2.579412999):4.323210974):17.74394296):4.394959019):0;">
+			<trait idref='typeTraitSet'/>
+			<trait idref='timeTraitSet'/>
+		</init>
+
+		<state>
+			<stateNode idref="tree"/>
+			<stateNode idref="rateMatrix"/>
+			<stateNode idref="popSizes"/>
+		</state>
+	 
+		<distribution spec='CompoundDistribution' id='posterior'>
+			<distribution idref='treePrior'/>
+			<distribution idref="parameterPriors"/>
+		</distribution>
+
+		<!-- Operators -->
+		<operator spec='ScaleOperator' id='RateScaler' parameter="@rateMatrix" scaleFactor="0.8" degreesOfFreedom="1" weight="1" />
+		<operator spec="ScaleOperator" id="PopSizeScaler" parameter="@popSizes" scaleAll="True" degreesOfFreedom="1" scaleFactor="0.8" weight="3"/> 
+
+		<!-- Loggers -->
+		<logger logEvery="1000" fileName="ariidae_w_fossils.log">
+			<model idref='posterior'/>
+			<log idref="posterior"/>
+			<log spec='TreePriorLoggerVolz' structuredCoalescentTreeDensityVolz='@treePrior'/>
+			<log spec='TreeRootTypeLoggerVolz' structuredCoalescentTreeDensityVolz='@treePrior'/>
+			<log spec='MigrationCountsLoggerVolz' density='@treePrior'/>
+			<log spec='MigrationModelLoggerVolz' migrationModel='@migModel'/>
+		</logger>
+	 
+		<logger logEvery="1000" fileName="ariidae_w_fossils.trees" mode="tree">
+			<log idref="treePrior"/>
+		</logger>
+
+		<logger logEvery="1000">
+			<model idref='posterior'/>
+			<log idref="posterior"/>
+			<log spec='TreePriorLoggerVolz' structuredCoalescentTreeDensityVolz='@treePrior'/>
+			<log spec='MigrationCountsLoggerVolz' density='@treePrior'/>
+			<log spec='MigrationModelLoggerVolz' migrationModel='@migModel'/>
+		</logger>
+
+	</run>
+   
+</beast>

@@ -1,0 +1,62 @@
+BASTA
+=============
+
+This is a BEAST 2 package which allows for the inference of migration rates, ancestral locations, and effective population sizes under an approximation of the structured coalescent.
+This program has been developed by heavily using the code from MultiTypeTree written by Tim Vaughan and colleagues. We are deeply grateful to the latter for the help during the development of BASTA.
+
+To find information on how to write an input xml file, look at the pdf file in the /doc/ folder of this distribution.
+
+Version 2 : the input xml format has slightly changed (nTypes for trees has been removed), please refer to the new example input xml files.
+
+
+
+INSTALLATION:
+
+BASTA is a Beast2 package, and as such can be downloaded and installed through BeaUti.
+
+1) Download and install any BEAST2 release (https://github.com/CompEvol/beast2/archive/).
+2) Run BeaUti (within the BEAST2 folder double-click on the BeaUti icon), select "File"->"Manage Packages", select "BASTA", and click the "Install/update" button in the bottom.
+
+Now BASTA is installed.
+To run it, double click on the Beast icon, and select the correct xml file.
+Examples xml files can be found in the "examples" folder of the BASTA distribution; they need to be manually edited, but a template file for BeaUti is currently being developed.
+
+
+
+An alternative method to run BASTA is to use the Basta.jar file that we provide:
+first download any BEAST2 compressed release (https://github.com/CompEvol/beast2/archive/), and uncompress it.
+Then, download our latest release of BASTA (from https://bitbucket.org/nicofmay/basta-bayesian-structured-coalescent-approximation/src , click on "dist", then choose the latest release ).
+Now BASTA can be run from the terminal command line with:
+java -cp [path-to-BASTA.jar]:[path-to-beast.jar] beast.app.beastapp.BeastMain [beast-command-line-options] [path-to-xml-input-file]
+
+
+NEW UPDATES:
+
+As of version BASTA 2.3.0 it is possible to use a uniform migration rate matrix and a uniform vector of population sizes. In both cases, it is sufficient to set the corresponding dimension parameter to 1. Also, it is now necessary to specify the number of demes with the "nTypes" input in the migrationModelVolz section. 
+
+As of version 2.2.0 of BASTA it is now possible to run BSSVS (each migration rate has a flag that can set it to 0 and so it is possible to infer which migration routes are non-negligible) and imputation (including samples from a non-specified population and inferring the population of origin). These analyses can be run using the corresponding example xml files as template.
+
+
+
+Creator: Nicola De Maio
+
+Contributors: Daniel Wilson, Chieh-hsi Wu
+
+
+License
+-------
+
+This software is free (as in freedom).  With the exception of the
+libraries on which it depends, it is made available under the terms of
+the GNU General Public Licence version 3, which is contained in this
+directory in the file named COPYING.
+
+The following libraries are bundled with BASTA:
+
+* Google Guava (http://code.google.com/p/guava-libraries/)
+* jblas (http://mikiobraun.github.io/jblas/)
+
+That software is distributed under the licences provided in the
+LICENCE.* files included in this archive.
+
+This project has been supported by the Oxford Martin School.

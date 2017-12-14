@@ -1,0 +1,11 @@
+Combine log and tree files and remove the burnin period
+Change the location names in the combined tree file so that no location name is a substring of another location name
+Run multitypetreeVolz.util.SampleDemeForBASTA which takes 8 inputs:
+(1) combined log file without burnin
+(2) combined tree file without burnin
+(3) A tab-delimited file with a single line listing all the names of the migration rate parameters in (1). The migration rate names should be in the same older as in (1).
+(4) A tab-delimited file with a single line listing all the names of the population size parameters in (1). The population size names should be in the same older as in (1).
+(5) A tab-delimited file with a single line listing all the names of the demes. The order should correspond to (4).
+(6) Path of the output log file
+(7) Path of the output tree file
+(8) id of the tree-log file
