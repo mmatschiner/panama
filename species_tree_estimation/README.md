@@ -24,7 +24,7 @@ The following software must be installed in order to run all scripts of director
 
 * `python3` (version 3.0 or later; [https://www.python.org/downloads/](https://www.python.org/downloads/))
 * `ruby` (version 2.0 or later; [https://www.ruby-lang.org/en/](https://www.ruby-lang.org/en/))
-* `java` (Java SE Development Kit 8 or later; [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
+* `java` (Java SE Development Kit 8; [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
 
 #### References
 

@@ -23,7 +23,7 @@ Final results can then be found in directory `analysis/beast`. The MCC tree will
 The following software must be installed in order to run all scripts of directory `scripts`:
 
 * `python3` (version 3.0 or later; [https://www.python.org/downloads/](https://www.python.org/downloads/))
-* `java` (Java SE Development Kit 8 or later; [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
+* `java` (Java SE Development Kit 8; [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
 
 #### References
 

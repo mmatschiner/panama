@@ -25,5 +25,5 @@ The analysis with the structured coalescent model, implemented in BASTA, will ge
 The following software must be installed in order to run all scripts of directory `scripts`:
 
 * `ruby` (version 2.0 or later; [https://www.ruby-lang.org/en/](https://www.ruby-lang.org/en/))
-* `java` (Java SE Development Kit 8 or later; [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
+* `java` (Java SE Development Kit 8; [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
 * `rscript` (R environment version 3.1 or later including the "ape", "phytools", and "methods" libraries; [https://www.r-project.org](https://www.r-project.org))
