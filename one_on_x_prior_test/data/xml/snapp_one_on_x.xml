@@ -274,7 +274,7 @@
     <operator id="clockScaler" spec="snap.operators.ScaleOperator" parameter="@clockRate" scaleFactor="0.75" weight="1.0"/>
 
     <!-- Loggers -->
-    <logger fileName="snapp.log" logEvery="500">
+    <logger fileName="snapp_one_on_x.log" logEvery="500">
         <log idref="posterior"/>
         <log idref="likelihood"/>
         <log idref="prior"/>
@@ -290,7 +290,7 @@
         <log idref="treeHeightLogger"/>
         <log idref="clockRate"/>
     </logger>
-    <logger fileName="snapp.trees" logEvery="500" mode="tree">
+    <logger fileName="snapp_one_on_x.trees" logEvery="500" mode="tree">
         <log spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@tree">
             <metadata spec="snap.RateToTheta" coalescenceRate="@coalescenceRate"/>
         </log>
