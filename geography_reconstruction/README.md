@@ -4,7 +4,7 @@
 
 #### Summary
 
-The code in directory `scripts` uses stochastic character mapping and the structured coalescent model to reconstruct the ancestral geography of Neotropical sea catfishes.
+The code in directory `src` uses stochastic character mapping and the structured coalescent model to reconstruct the ancestral geography of Neotropical sea catfishes.
 
 #### Input
 
@@ -12,13 +12,13 @@ The posterior set of 1000 trees resulting from species-tree estimation (see spec
 
 #### How to run
 
-To conduct this reanalysis, navigate into the `scripts` directory and run `bash run_all.sh`.
+To conduct this reanalysis, navigate into the `src` directory and run `bash run_all.sh`.
 
 #### Results
 
-The stochastic-mapping part of the analysis will generate a plot showing the posterior species-tree distribution in form of a cloudogram, with branch color according to character mapping, which will be written to `ariidae_w_fossils_mapped_1000.svg` in directory `analysis/trees`. The same directory will also contain a file in Nexus format for the posterior tree distribution with mapped characters (`ariidae_w_fossils_annotated_1000.trees`) and an MCC tree generated from this distribution (`ariidae_w_fossils_annotated_1000.tre`). Lists with migration times will be written to directory `analysis/stochastic_mapping/tables`.
+The stochastic-mapping part of the analysis will generate a plot showing the posterior species-tree distribution in form of a cloudogram, with branch color according to character mapping, which will be written to `ariidae_w_fossils_mapped_1000.svg` in directory `res/trees`. The same directory will also contain a file in Nexus format for the posterior tree distribution with mapped characters (`ariidae_w_fossils_annotated_1000.trees`) and an MCC tree generated from this distribution (`ariidae_w_fossils_annotated_1000.tre`). Lists with migration times will be written to directory `res/stochastic_mapping/tables`.
 
-The analysis with the structured coalescent model, implemented in BASTA, will generate two file in Nexus format, for the posterior tree distribution (`ariidae_w_fossils.trees`) and the annotated MCC tree summarizing this distribution (`ariidae_w_fossils.tre`). Both of these files will be written to directory `analysis/basta`.
+The analysis with the structured coalescent model, implemented in BASTA, will generate two file in Nexus format, for the posterior tree distribution (`ariidae_w_fossils.trees`) and the annotated MCC tree summarizing this distribution (`ariidae_w_fossils.tre`). Both of these files will be written to directory `res/basta`.
 
 #### Requirements
 

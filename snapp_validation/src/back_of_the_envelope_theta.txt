@@ -1,0 +1,24 @@
+N_haploid = 50000 (N_diploid = 25000); expected time to coalescence of two alleles is 2 N_diploid.
+height of tree 1 = 4634410 generations
+SNPs per alignment 1 = 7.2124
+alignment_length = 200
+proportion of SNPs in alignment 1 = 7.2124/200 = 0.036062
+SNPs per alignment 2 = 5.9278
+proportion of SNPs in alignment 2 = 5.9278/200 = 0.029639
+per-generation mutation rate per site = 0.000000001
+per-generation mutation rate per SNP in dataset 1 = 0.000000001/0.036062 = 0.000000027730021
+per-generation mutation rate per SNP in dataset 2 = 0.000000001/0.029639 = 0.00000003373933
+
+Theta = 4 N_diploid µ
+Theta 1 = 4 * 25000 * 0.000000027730021 = 0.0027730021
+Theta 1 = 4 * 25000 * 0.00000003373933 = 0.003373933
+
+estimated from dataset 1:
+per-million-year mutation rate per SNP = 0.0063184
+per-generation mutation rate per SNP = 0.0063184/(1000000/5) = 0.000000031592
+
+
+true value used in simulation:
+per-million-year mutation rate per alignment site = 0.0002
+per-million-year mutation rate per SNP = 0.0002 / 0.036062 = 0.0002 * 200 / 7.2124 = 0.005546004104
+N_diploid = 25000

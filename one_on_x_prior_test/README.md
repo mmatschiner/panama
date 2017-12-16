@@ -2,7 +2,7 @@
 
 #### Summary
 
-The code in directory `scripts` was used to compare the performance of two different prior distributions for the Theta parameter of the multi-species coalescent model implemented in SNAPP.
+The code in directory `src` was used to compare the performance of two different prior distributions for the Theta parameter of the multi-species coalescent model implemented in SNAPP.
 
 #### Input
 
@@ -10,7 +10,7 @@ The input files used in both analyses (`data/xml/snapp_one_on_x.xml` and `data/x
 
 #### How to run
 
-To conduct this analysis, navigate into the `scripts` directory and run `bash run_all.sh`. This will replace the result files currently included in directory `res` and conduct all steps of the analysis. This analysis will take a few days to complete.
+To conduct this analysis, navigate into the `src` directory and run `bash run_all.sh`. This will replace the result files currently included in directory `res` and conduct all steps of the analysis. This analysis will take a few days to complete.
 
 #### Results
 
@@ -20,6 +20,6 @@ The mean ages resulting from both analyses are virtually identical, as a compari
 
 #### Requirements
 
-The following software must be installed in order to run all scripts of directory `scripts`:
+The following software must be installed in order to run all scripts of directory `src`:
 
 * `java` (Java SE Development Kit 8; [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html))

@@ -4,7 +4,7 @@
 
 #### Summary
 
-The code in directory `scripts` performs a species tree analysis of SNP data for Neotropical sea catfishes.
+The code in directory `src` performs a species tree analysis of SNP data for Neotropical sea catfishes.
 
 #### Input
 
@@ -12,11 +12,11 @@ The SNP data generated for Neotropical sea catfishes can be found in file `ariid
 
 #### How to run
 
-To conduct this reanalysis, navigate into the `scripts` directory and run `bash run_all.sh`. Note however, that this script will quit after generating XML format input files and preparing five replicate analysis directories for SNAPP (in `analysis/snapp/replicates`). SNAPP analyses will need to be conducted separately using the generated XML input files. How to run these analyses most efficiently will depend on the available computer resources, but the `start.slurm` and `resume.slurm` scripts in the three replicate analysis directories may be helpful as templates to execute SNAPP. A single analysis will sample 500000 MCMC iterations, but at least 1000000 iterations per replicate will be required for convergence, thus each analysis will need to be resumed at least once. For each replicate, around 1-2 weeks of run time will be required. Once the SNAPP analyses have finished, the remaining steps listed in file `run_all.sh` can be executed by copy-pasting the commands one by one to the command line. These steps should require only a few seconds.
+To conduct this reanalysis, navigate into the `scripts` directory and run `bash run_all.sh`. Note however, that this script will quit after generating XML format input files and preparing five replicate analysis directories for SNAPP (in `res/snapp/replicates`). SNAPP analyses will need to be conducted separately using the generated XML input files. How to run these analyses most efficiently will depend on the available computer resources, but the `start.slurm` and `resume.slurm` scripts in the three replicate analysis directories may be helpful as templates to execute SNAPP. A single analysis will sample 500000 MCMC iterations, but at least 1000000 iterations per replicate will be required for convergence, thus each analysis will need to be resumed at least once. For each replicate, around 1-2 weeks of run time will be required. Once the SNAPP analyses have finished, the remaining steps listed in file `run_all.sh` can be executed by copy-pasting the commands one by one to the command line. These steps should require only a few seconds.
 
 #### Results
 
-Final results can then be found in directory `analysis/snapp/combined`. The MCC species tree will be in file `ariidae.tre` and a posterior samples of 100 and 1000 trees will be in files `ariidae_100.trees` and `ariidae_1000.trees`. 10000 sampled parameter estimates will be in file `ariidae.log`, which can be opened for a visual assessment of convergence in the software Tracer ([http://tree.bio.ed.ac.uk/software/tracer/](http://tree.bio.ed.ac.uk/software/tracer/)).
+Final results can then be found in directory `res/snapp/combined`. The MCC species tree will be in file `ariidae.tre` and a posterior samples of 100 and 1000 trees will be in files `ariidae_100.trees` and `ariidae_1000.trees`. 10000 sampled parameter estimates will be in file `ariidae.log`, which can be opened for a visual assessment of convergence in the software Tracer ([http://tree.bio.ed.ac.uk/software/tracer/](http://tree.bio.ed.ac.uk/software/tracer/)).
 
 #### Requirements
 
